@@ -1,0 +1,21 @@
+{
+  "name": "webpack-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "a.js",
+  "dependencies": {
+    "webpack-cli": "^3.1.2",
+    "webpack": "^4.26.1"
+  },
+  "devDependencies": {
+    "css-loader": "^1.0.1",
+    "style-loader": "^0.23.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --config config.js --mode development",
+    "do": "node dist/bundle.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
