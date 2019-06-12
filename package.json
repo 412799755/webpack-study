@@ -1,21 +1,37 @@
 {
-  "name": "webpack-study",
-  "version": "1.0.0",
-  "description": "",
-  "main": "a.js",
-  "dependencies": {
-    "webpack-cli": "^3.1.2",
-    "webpack": "^4.26.1"
-  },
-  "devDependencies": {
-    "css-loader": "^1.0.1",
-    "style-loader": "^0.23.1"
-  },
+  "name": "demo",
+  "productName": "TEST",
+  "author": "CYT",
+  "version": "1.0.4",
+  "main": "main.js",
+  "description": "项目描述",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --config config.js --mode development",
-    "do": "node dist/bundle.js"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
-  "author": "",
-  "license": "ISC"
+  "build": {
+    "electronVersion": "1.8.4",
+    "win": {
+      "requestedExecutionLevel": "highestAvailable",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "appId": "demo",
+    "artifactName": "demo-${version}-${arch}.${ext}",
+    "nsis": {
+      "artifactName": "demo-${version}-${arch}.${ext}"
+    }
+  },
+  "dependencies": {
+    "core-js": "^2.4.1",
+    "electron-packager": "^12.1.0",
+    "electron-updater": "^2.22.1"
+  }
 }
