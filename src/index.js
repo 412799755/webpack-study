@@ -4,7 +4,7 @@ import Icon from './icon.png'
 import txt from './a.txt'
 function component() {
     const element = document.createElement('div')
-    element.innerHTML = _.join(['Hello1', 'webpack'], ' ');
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     element.classList.add('hello')
 
       // Add the image to our existing div.
