@@ -4,7 +4,7 @@ module.exports = {
     mode:'development',
     entry: {
             app:   './src/index.js',
-            print:   './src/print.js',
+            another: './src/another-module.js'
         },
     plugins: [
         new HtmlWebpackPlugin({title:'webpack-study'})
@@ -14,6 +14,11 @@ module.exports = {
         path:path.resolve(__dirname,'dist')
     },
     // devtool: 'inline-source-map',
+    optimization:{
+        splitChunks:{
+            chunks:'all'
+        }
+    },
     devServer: {
         contentBase:'./dist'
     },

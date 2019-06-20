@@ -1,7 +1,6 @@
 import _ from 'lodash'
 import  './style.css'
 import Icon from './icon.png'
-import txt from './a.txt'
 function component() {
     const element = document.createElement('div')
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
@@ -51,7 +50,7 @@ function img(){
             element.appendChild(i);
         }
     }
-    image.src = 'https://img-blog.csdn.net/20160608095321599'
+    image.src = 'https://test.schbrain.com/api/tk/question/tkBucket/download/paper/458288388997697536/14_12_9.png'
 
 
 
