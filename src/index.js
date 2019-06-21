@@ -25,9 +25,14 @@ function img(){
         console.log(image.width)
         const ctx = canvas.getContext("2d")
         const ctx2 = canvas2.getContext("2d")
-        canvas.width = image.width;
-        canvas.height = image.height;
-        ctx.drawImage(image, 0, 0);
+        const naturalWidth = image.naturalWidth
+        const naturalHeight= image.naturalHeight
+        canvas.width = naturalWidth;
+        canvas.height = naturalHeight;
+        image.width = naturalWidth/5
+        canvas.style.width = naturalWidth/5 + 'px';
+        canvas.style.height = naturalHeight/5 + 'px';
+        ctx.drawImage(image, 0, 0,naturalWidth,naturalHeight);
         canvas.onmousemove = function(e){
             var mouseX,mouseY
             if(e.offsetX){
@@ -39,14 +44,15 @@ function img(){
             }
            console.log(ctx.getImageData(mouseX, mouseY, 1, 1).data);
         }
-        canvas2.width = image.width;
-        canvas2.height = image.height/3;
+        canvas2.width = naturalWidth;
+        canvas2.height = naturalHeight/3;
         element.appendChild(canvas);
         // element.appendChild(canvas2);
         for (let j = 0; j < 3; j++) {
-            ctx2.drawImage(image,0,-j*image.height/3,image.width, image.height);
+            ctx2.drawImage(image,0,-j*naturalHeight/3,naturalWidth, naturalHeight);
             var i = new Image()
             i.src = canvas2.toDataURL()
+            i.width = naturalWidth/5
             element.appendChild(i);
         }
     }
