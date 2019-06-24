@@ -6,10 +6,10 @@ module.exports = {
             index:   './src/index.js',
         },
     plugins: [
-        new HtmlWebpackPlugin({title:'webpack-study'})
+        new HtmlWebpackPlugin({title:'Caching'})
     ],
     output:{
-        filename: '[name].bundle.js',
+        filename: '[name].[contenthash].js',
         chunkFilename: '[name].bundle.js',
         path:path.resolve(__dirname,'dist')
     },
