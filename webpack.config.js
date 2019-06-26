@@ -14,11 +14,12 @@ module.exports = {
         path:path.resolve(__dirname,'dist')
     },
     // devtool: 'inline-source-map',
-    // optimization:{
-    //     splitChunks:{
-    //         chunks:'all'
-    //     }
-    // },
+    optimization:{
+        // splitChunks:{
+        //     chunks:'all'
+        // }
+        runtimeChunk: 'single'
+    },
     devServer: {
         contentBase:'./dist'
     },
