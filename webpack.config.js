@@ -1,14 +1,17 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HelloWorldPlugin =require('./plugin/MyExmapleWebpackPlugin')
+const fileListPlugin =require('./plugin/fileListPlugin')
 module.exports = {
     mode:'development',
     entry: {
             index:   './src/index.js',
         },
     plugins: [
+
         new HtmlWebpackPlugin({title:'Caching'}),
-        new HelloWorldPlugin({ options: true })
+        new HelloWorldPlugin({ options: true }),
+        new fileListPlugin({ options: true }),
     ],
     output:{
         filename: '[name].[contenthash].js',
