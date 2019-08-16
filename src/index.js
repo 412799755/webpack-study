@@ -20,7 +20,6 @@ function img(){
     var canvas = document.createElement('canvas')
     var canvas2 = document.createElement('canvas')
     const image = new Image();
-
     image.crossOrigin = '';
     image.onload = ()=>{
         console.log(image.width)
@@ -58,11 +57,6 @@ function img(){
         }
     }
     image.src = 'https://test.schbrain.com/api/tk/question/tkBucket/download/paper/458288388997697536/14_12_9.png'
-
-
-
-
-
     element.appendChild(image);
     return element
 }

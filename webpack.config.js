@@ -38,7 +38,7 @@ module.exports = {
                 use: {
                     loader: path.resolve(__dirname, './txt-loader.js'),
                     options: {
-                        name: 'YOLO'
+                        name: 'luoy'
                     }
                 }
             }
