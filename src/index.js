@@ -1,5 +1,7 @@
 import  './style.css'
+import test from './test.txt'
 import Icon from './icon.png'
+console.log(test)
  function getComponent() {
        return import(/* webpackChunkName: "lodash" */ 'lodash').then(({ default: _ }) => {
             const element = document.createElement('div');

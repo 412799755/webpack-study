@@ -1,0 +1,4 @@
+{
+ content: "test loader output from YOLO↵"
+ filename: "/Users/yanglu/Desktop/Programers/test-loader/src/public/test.txt"
+}

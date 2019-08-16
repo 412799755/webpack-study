@@ -34,13 +34,13 @@ module.exports = {
                 use:['file-loader']
             },
             {
-                test:/\.txt$/,
-                use:[  {
-                    loader: 'file-loader',
+                test: /\.txt$/,
+                use: {
+                    loader: path.resolve(__dirname, './txt-loader.js'),
                     options: {
-                        name:'a.txt'
+                        name: 'YOLO'
                     }
-                }]
+                }
             }
         ]
     }
