@@ -1,12 +1,14 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HelloWorldPlugin =require('./plugin/MyExmapleWebpackPlugin')
 module.exports = {
     mode:'development',
     entry: {
             index:   './src/index.js',
         },
     plugins: [
-        new HtmlWebpackPlugin({title:'Caching'})
+        new HtmlWebpackPlugin({title:'Caching'}),
+        new HelloWorldPlugin({ options: true })
     ],
     output:{
         filename: '[name].[contenthash].js',
@@ -36,7 +38,7 @@ module.exports = {
             {
                 test: /\.txt$/,
                 use: {
-                    loader: path.resolve(__dirname, './txt-loader.js'),
+                    loader: path.resolve(__dirname, './loader/txt-loader.js'),
                     options: {
                         name: 'luoy'
                     }
