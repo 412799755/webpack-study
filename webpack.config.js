@@ -39,6 +39,12 @@ module.exports = {
     module:{
         rules: [
             {
+                test:/\.js$/,
+                use: {
+                    loader: path.resolve(__dirname,'./loader/drop-console.js'),
+                }
+            },
+            {
                 test:/\.css$/,
                 use: [MiniCssExtractPlugin.loader,'css-loader']
             },
