@@ -1,4 +1,5 @@
-import  './style.css'
+import './css/style.css'
+import './css/style2.css'
 import test from './test.txt'
 import Icon from './icon.png'
 console.log(test)

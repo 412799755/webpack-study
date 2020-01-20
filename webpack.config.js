@@ -1,15 +1,23 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HelloWorldPlugin =require('./plugin/MyExmapleWebpackPlugin')
-const fileListPlugin =require('./plugin/fileListPlugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HelloWorldPlugin =require('./plugin/MyExmapleWebpackPlugin');
+const fileListPlugin =require('./plugin/fileListPlugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     mode:'development',
     entry: {
             index:   './src/index.js',
         },
     plugins: [
-
-        new HtmlWebpackPlugin({title:'Caching'}),
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: "[id].css",
+        }),
+        new HtmlWebpackPlugin({
+            template:path.resolve(__dirname,'./index.html')
+        }),
         new HelloWorldPlugin({ options: true }),
         new fileListPlugin({ options: true }),
     ],
@@ -32,11 +40,16 @@ module.exports = {
         rules: [
             {
                 test:/\.css$/,
-                use: ['style-loader','css-loader']
+                use: [MiniCssExtractPlugin.loader,'css-loader']
             },
             {
                 test:/\.(png|svg|jpg|gif)$/,
-                use:['file-loader']
+                use:[{
+                    loader: 'file-loader',
+                    options: {
+                        name: 'img/[name].[hash:8].[ext]'
+                    }
+                }]
             },
             {
                 test: /\.txt$/,
